@@ -8,7 +8,7 @@
 
 | 검사 | 결과 |
 | --- | --- |
-| `python -m pytest -q` | **41 passed** |
+| `python -m pytest -q` | **42 passed** |
 | `ruff check .` | 통과 |
 | `ruff format --check .` | 통과 |
 | `python -m compileall -q src` | 통과 |
@@ -26,6 +26,7 @@
 - 동일 문장의 여러 요청에 같은 기록을 중복 매칭하지 않음.
 - 자식 프로세스 타임아웃 종료·회수, stdin Unicode/줄바꿈/셸 특수문자 왕복.
 - 원문 출력이나 메시지 본문을 오류/프로세스 명령행에 노출하지 않음.
+- Windows cp1252 환경에서도 한글 fixture와 진단 출력은 UTF-8로 처리.
 - 고정한 upstream의 합성 JSON fixture를 실제 어댑터로 해석.
 - Textual headless UI에서 방 선택·검색·한글/이모지 입력·직접 전송·초안 복구.
 - 여러 줄 붙여넣기와 Ctrl+J가 전송을 유발하지 않음.

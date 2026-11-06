@@ -102,7 +102,9 @@ async def test_pinned_upstream_fixtures_are_parsed():
 
     async def fixture(args, **kwargs):
         name = "rooms" if args[0] == "rooms" else "messages"
-        return json.loads((Path(__file__).parent / "fixtures" / f"{name}.json").read_text())
+        return json.loads(
+            (Path(__file__).parent / "fixtures" / f"{name}.json").read_text(encoding="utf-8")
+        )
 
     backend.transport.call = fixture
     rooms = await backend.rooms()

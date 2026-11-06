@@ -7,7 +7,7 @@ AI 모델이나 MCP 없이 일반 터미널 프로그램으로 실행합니다. 
 
 ![합성 데이터로 실행한 KAKA 데모 화면](docs/preview.svg)
 
-> 현재 상태: 첫 구현. Linux에서 데모·프로토콜·상태 관리·TUI 자동 테스트를 수행합니다.
+> 현재 상태: 첫 구현. 데모·프로토콜·상태 관리·TUI 자동 테스트와 Windows/Linux CI를 제공합니다.
 > **실제 Windows 카카오톡 수신/전송과 ORCA의 한글 IME는 아직 실기 검증 전입니다.**
 > 검증 범위와 수동 확인 절차는 [VALIDATION.md](docs/VALIDATION.md)에 기록합니다.
 

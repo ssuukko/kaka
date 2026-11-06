@@ -4,6 +4,7 @@ import argparse
 import asyncio
 import math
 import os
+import sys
 from pathlib import Path
 
 from kaka import __version__
@@ -49,6 +50,10 @@ async def doctor(backend) -> int:
 
 
 def main() -> int:
+    # Windows redirected stdout may default to cp1252/cp949. Keep diagnostics UTF-8.
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, "reconfigure"):
+            stream.reconfigure(encoding="utf-8")
     parser = argparse.ArgumentParser(description="ORCA에서 직접 대화하는 카카오톡 TUI")
     parser.add_argument("--version", action="version", version=__version__)
     parser.add_argument("--demo", action="store_true", help="합성 데이터로 실행 (실제 전송 없음)")
